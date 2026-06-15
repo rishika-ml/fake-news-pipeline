@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+scikit-learn
+joblib
+numpy
+pandas
+tensorflow-cpu==2.13.0
+requests
+python-dotenv
+xgboost
