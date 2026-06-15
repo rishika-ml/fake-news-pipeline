@@ -115,5 +115,5 @@ The model automatically retrains every Sunday using GitHub Actions:
 ```yaml
 schedule:
   - cron: '0 0 * * 0'  # Every Sunday at midnight
-👩‍💻 Created By
-Rishika Mandal
+
+
