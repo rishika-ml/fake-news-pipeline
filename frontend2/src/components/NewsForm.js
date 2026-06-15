@@ -12,7 +12,7 @@ function NewsForm({ setResult, setLoading }) {
 
     try {
       if (mode === 'text') {
-        const response = await fetch('https://fake-news-pipeline.onrender.com', {
+        const response = await fetch('https://fake-news-pipeline.onrender.com/predict-text', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ text })
@@ -23,7 +23,7 @@ function NewsForm({ setResult, setLoading }) {
       } else if (mode === 'image') {
         const formData = new FormData();
         formData.append('file', image);
-        const response = await fetch('https://fake-news-pipeline.onrender.com', {
+        const response = await fetch('https://fake-news-pipeline.onrender.com/predict-image', {
           method: 'POST',
           body: formData
         });
@@ -34,7 +34,7 @@ function NewsForm({ setResult, setLoading }) {
         const formData = new FormData();
         formData.append('file', image);
         formData.append('text', text);
-        const response = await fetch('https://fake-news-pipeline.onrender.com', {
+        const response = await fetch('https://fake-news-pipeline.onrender.com/predict-fusion', {
           method: 'POST',
           body: formData
         });
