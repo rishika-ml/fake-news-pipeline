@@ -1,0 +1,16 @@
+name: Weekly Retrain
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install requests pandas numpy scikit-learn joblib python-dotenv
+      - run: python backend/pipeline.py
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
